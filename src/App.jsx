@@ -9,7 +9,7 @@ import { Container } from 'react-bootstrap'
 function App() {
   return (
     <>
-      <MyNav />
+      <MyNav/>
       <Container>
         <Welcome />
         <AllTheBooks />
