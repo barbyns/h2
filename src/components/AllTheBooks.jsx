@@ -1,22 +1,18 @@
-import { Card, Col, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import fantasy from '../data/fantasy.json'
+import SingleBook from './SingleBook'
 
 const AllTheBooks = () => {
   return (
-    <Row className="g-2">
-      {fantasy.map((book) => {
-        return (
-          <Col xs={12} md={4} key={book.asin}>
-            <Card className="book-cover d-flex flex-column">
-              <Card.Img variant="top" src={book.img} />
-              <Card.Body>
-                <Card.Title>{book.title}</Card.Title>
-              </Card.Body>
-            </Card>
+    <Container>
+      <Row>
+        {fantasy.map((book) => (
+          <Col xs={12} md={6} lg={4} key={book.asin}>
+            <SingleBook book={book} />
           </Col>
-        )
-      })}
-    </Row>
+        ))}
+      </Row>
+    </Container>
   )
 }
 
