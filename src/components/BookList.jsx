@@ -1,14 +1,17 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import fantasy from '../data/fantasy.json'
 import SingleBook from './SingleBook'
 
-const AllTheBooks = () => {
+const BookList = ({ books }) => {
+  if (!books || !Array.isArray(books)) {
+    return <p>Nessun libro disponibile</p>
+  }
+
   return (
     <Container>
       <Row>
-        {fantasy.map((book) => (
+        {books.map((book) => (
           <Col xs={12} md={6} lg={4} key={book.asin}>
-            <SingleBook book={book} src={{img:"https://images-na.ssl-images-amazon.com/images/I/91uxJwnolDL.jpg"}}/>
+            <SingleBook book={book} />
           </Col>
         ))}
       </Row>
@@ -16,4 +19,4 @@ const AllTheBooks = () => {
   )
 }
 
-export default AllTheBooks
+export default BookList
