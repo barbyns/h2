@@ -6,8 +6,10 @@ import Welcome from './components/Welcome'
 // import AllTheBooks from './components/AllTheBooks'
 import { Container } from 'react-bootstrap'
 import BookList from './components/BookList'
-
+import CommentArea from './components/CommentArea'
 import fantasy from './data/fantasy.json'
+import AddComment from './components/AddComment'
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Welcome />
         {/* <AllTheBooks /> */}
         <BookList books={fantasy} />
+        <CommentArea book={fantasy[0]}/>
       </Container>
       <MyFooter />
     </>
