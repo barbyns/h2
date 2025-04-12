@@ -29,7 +29,7 @@ const SingleBook = ({ book }) => {
         </Card.Body>
       </Card>
 
-      {/* ✅ Mostra CommentArea solo se selected è true */}
+ 
       {selected && <CommentArea book={book} />}
     </>
   )
